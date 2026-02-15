@@ -1,0 +1,27 @@
+package = "shlex-lpeg"
+lua = ">=5.1"
+
+[description]
+summary = "shlex/shellword in lpeg"
+maintainer = "https://github.com/phanen"
+homepage = "https://github.com/phanen/shlex-lpeg"
+labels = ["shlex", "lpeg", "shellword", "split", "quote"]
+license = "MIT"
+
+[source]
+url = "https://github.com/phanen/$(PACKAGE)/archive/refs/tags/v$(VERSION).zip"
+dev = "git+https://github.com/phanen/$(PACKAGE).git"
+
+[dependencies]
+lpeg = "1.1.0-2"
+
+[test]
+type = "busted"
+flags = []
+
+[build]
+type = "builtin"
+
+[test_dependencies]
+luacov = '0.17.0-1'
+luafilesystem = '1.9.0-1'

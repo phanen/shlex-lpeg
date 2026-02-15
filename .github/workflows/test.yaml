@@ -1,0 +1,31 @@
+name: Test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  luarocks-release:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install Lux
+        uses: lumen-oss/gh-actions-lux@v1
+        with:
+          version: 0.25.2
+
+      # - uses: leafo/gh-actions-lua@v10
+      #   with:
+      #     luaVersion: "5.1"
+
+      - name: Lux test
+        run: |
+          # lx --lua-version 5.1 test --impure -- -m '?.lua'
+          lx --lua-version jit test --impure -- -m '?.lua'
+          # lx --lua-version 5.1 install-lua
+          # lx --lua-version 5.1 lua --no-loader -- -v
+          # lua -v
+          # lx --lua-version 5.1 test --impure -- -m '?.lua'

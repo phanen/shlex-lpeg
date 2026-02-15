@@ -1,0 +1,28 @@
+.direnv
+
+# Added by nix
+
+/result*
+
+# For compat
+/.rocks/*
+/rocks.lock
+/rocks.toml
+
+# Temp test files
+/lux-lib/resources/test/luatest-0.2-1/
+/lux-lib/proptest-regressions/
+/*.rockspec
+*.snap.new
+/*.rock
+
+# Lux project files
+/.lux/*
+/lux.lock
+/*.rock
+
+# LuaCov
+luacov.stats.out
+luacov.report.out
+
+.pre-commit-config.yaml
